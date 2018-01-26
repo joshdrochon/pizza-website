@@ -2,21 +2,10 @@
 
 function Pizza(size, toppings){
 
-  this.pizzaSize = size;
+  this.size = size;
   this.toppings = toppings;
+
 }
-
-var newPizza = new Pizza("medium", ["Green Peppers", "Sliced Tomatoes"]);
-
-newPizza.size
-
-
-
-
-
-
-
-
 
 //ui logic
 
@@ -25,27 +14,20 @@ $(document).ready(function(){
     event.preventDefault();
 
     var userSize = $("#size").val();
-
     var userToppings = [];
 
     $('input[name="toppings"]:checked').each(function(){
        //console.log(this.value);
-       userToppings.push(this.value);
+       userToppings.push(this.value); //loops through each checked checkbox, grabs the value, and pushes into array
     });
 
-    console.log(userSize);
-    console.log(userToppings);
+    var userPizza = new Pizza(userSize, userToppings);
 
-    // $('input[name="toppings"]:checked').each(function(){
-    //    console.log(this.value);
-    // }); //loops through each checked checkbox and logs its value
-
+    console.log(userPizza);
 
     $("#summary").show();
 
     $("#size-toppings")[0].reset(); //reset form to default
 
   });
-
-
 });

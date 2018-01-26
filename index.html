@@ -12,35 +12,52 @@
     <div class="container">
       <h1>The Peppered Pizza</h1>
 
-      <div class="select-size">
+      <form id="size-toppings">
 
-        <form id="select-size">
-          <label for="size">Select your Size</label>
-          <select>
+        <div class="size">
+
+          <h3>Select your Size</h3>
+
+          <select id="size">
             <option value="small">Small (10")</option>
             <option value="medium">Medium (12")</option>
             <option value="large">Large (15")</option>
           </select>
-        </form>
 
-      </div><!--end select-size-->
+        </div><!--end size-->
 
-      <div class="select-toppings">
-        <p>Note, all pizzas come standard with pizza sauce and cheese.</p>
-        <label for="toppings">Select your Toppings</label>
-        <select>
-          <option value="pepperoni">Pepperoni</option>
-          <option value="canadian-bacon">Canadian Bacon</option>
-          <option value="pineapple">Pineapple</option>
-          <option value="sausage">Sausage</option>
-          <option value="green-peppers">Green Peppers</option>
-          <option value="mushrooms">Mushrooms</option>
-          <option value="slice-tomatoes">Sliced Tomatoes</option>
-          <option value="spinach">Spinach</option>
-          <option value="onions">Onions</option>
-          <option value="extra-cheese">Extra Cheese</option>
-        </select>
-      </div>
+        <div class="toppings">
+
+          <p>Note, all pizzas come standard with pizza sauce and cheese.</p>
+          <h3>Select your Toppings</h3>
+
+
+          <fieldset id="toppings">
+            <input type="checkbox" name="toppings" id="checkbox-1" value="pepperoni" class="custom" checked />
+            <label for="checkbox-1">Pepperoni</label>
+            <input type="checkbox" name="toppings" value="canadian-bacon">Canadian Bacon</input>
+            <input type="checkbox" name="toppings" value="pineapple">Pineapple</input>
+            <input type="checkbox" name="toppings" value="sausage">Sausage</input>
+            <input type="checkbox" name="toppings" value="green-peppers">Green Peppers</input>
+            <input type="checkbox" name="toppings" value="mushrooms">Mushrooms</input>
+            <input type="checkbox" name="toppings" value="sliced-tomatoes">Sliced Tomatoes</input>
+            <input type="checkbox" name="toppings" value="spinach">Spinach</input>
+            <input type="checkbox" name="toppings" value="onions">Onions</input>
+            <input type="checkbox" name="toppings" value="extra-cheese">Extra Cheese</input>
+          </fieldset>
+
+        </div><!--end toppings-->
+        <br>
+        <button class="btn btn-success" type="submit" name="button">Place Order</button>
+
+      </form><!--end form-->
+
+      <div id="summary">
+        <hr>
+        <p>Cool, you order a pizza with:<ul class="toppings-selected"><ul>
+
+        </p>
+      </div><!--end summary-->
 
     </div><!--end container-->
   </body>

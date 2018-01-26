@@ -1,11 +1,5 @@
 //business logic
 
-function Pizza(size, toppings){
-
-  this.size = size;
-  this.toppings = toppings;
-
-}
 
 //ui logic
 
@@ -21,9 +15,40 @@ $(document).ready(function(){
        userToppings.push(this.value); //loops through each checked checkbox, grabs the value, and pushes into array
     });
 
+    function Pizza(size, toppings){
+        this.size = size;
+        this.toppings = toppings;
+      }
+
+
     var userPizza = new Pizza(userSize, userToppings);
 
-    console.log(userPizza);
+    Pizza.prototype.calcPrice = function(){
+
+      var sm = 14;
+      var md = 18;
+      var lg = 22;
+
+      for(let i = 0; i<=userToppings.length; i++){
+        if(userPizza.size == "small"){
+          sm += 1.50;
+          return sm;
+        }else if(userPizza.size == "medium"){
+          md += 1.50;
+          return md;
+        }else{
+          lg += 1.50;
+          return lg;
+        }
+      }
+
+      //return sm;
+    };
+
+
+    //console.log(userPizza);
+
+    console.log(userPizza.calcPrice());
 
     $("#summary").show();
 

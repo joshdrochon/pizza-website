@@ -25,6 +25,8 @@ $(document).ready(function(){
 
     var userPizza = new Pizza(userSize, userToppings);
 
+    console.log(userToppings);
+
     Pizza.prototype.calcPrice = function(){
 
       var sm = 14;
@@ -48,8 +50,6 @@ $(document).ready(function(){
 
 
     $(".total").text(userPizza.calcPrice());
-
-
 
     $("#summary").show();
 

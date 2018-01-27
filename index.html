@@ -6,11 +6,18 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
     <script src="scripts/jquery-3.2.1.js"></script>
     <script src="scripts/scripts.js"></script>
-    <title>The Peppered Pizza</title>
+    <title>Pirate Bay Pizza</title>
   </head>
   <body>
     <div class="container">
-      <h1>The Peppered Pizza</h1>
+      <h1>Pirate Bay Pizza</h1>
+
+      <p>We have three sizes:</p>
+      <ul>
+        <li>Small: 14</li>
+        <li>Medium: 18</li>
+        <li>Large: 22</li>
+      </ul>
 
       <form id="size-toppings">
 
@@ -33,16 +40,16 @@
 
 
           <fieldset id="toppings">
-            <input type="checkbox" name="toppings" id="cb1" value="pepperoni"> Pepperoni</input><br>
-            <input type="checkbox" name="toppings" id="cb2" value="canadian-bacon"> Canadian Bacon</input><br>
-            <input type="checkbox" name="toppings" id="cb3" value="pineapple"> Pineapple</input><br>
-            <input type="checkbox" name="toppings" id="cb4" value="sausage"> Sausage</input><br>
-            <input type="checkbox" name="toppings" id="cb5" value="green-peppers"> Green Peppers</input><br>
-            <input type="checkbox" name="toppings" id="cb6" value="mushrooms"> Mushrooms</input><br>
-            <input type="checkbox" name="toppings" id="cb7" value="sliced-tomatoes"> Sliced Tomatoes</input><br>
-            <input type="checkbox" name="toppings" id="cb8" value="spinach"> Spinach</input><br>
-            <input type="checkbox" name="toppings" id="cb9" value="onions"> Onions</input><br>
-            <input type="checkbox" name="toppings" id="cb10" value="extra-cheese"> Extra Cheese</input>
+            <input type="checkbox" name="toppings" value="pepperoni"> Pepperoni</input><br>
+            <input type="checkbox" name="toppings" value="canadian-bacon"> Canadian Bacon</input><br>
+            <input type="checkbox" name="toppings" value="pineapple"> Pineapple</input><br>
+            <input type="checkbox" name="toppings" value="sausage"> Sausage</input><br>
+            <input type="checkbox" name="toppings" value="green-peppers"> Green Peppers</input><br>
+            <input type="checkbox" name="toppings" value="mushrooms"> Mushrooms</input><br>
+            <input type="checkbox" name="toppings" value="sliced-tomatoes"> Sliced Tomatoes</input><br>
+            <input type="checkbox" name="toppings" value="spinach"> Spinach</input><br>
+            <input type="checkbox" name="toppings" value="onions"> Onions</input><br>
+            <input type="checkbox" name="toppings" value="extra-cheese"> Extra Cheese</input>
           </fieldset>
 
         </div><!--end toppings-->
@@ -53,8 +60,8 @@
 
       <div id="summary">
         <hr>
-        <p>Cool, you order a pizza with:<ul class="toppings-selected"><ul>
-
+        <p>Cool, you order a pizza with:<ul class="toppings-selected"></ul>
+          <h2>That'll cost you a total of $<span class="total"></span>.</h2>
         </p>
       </div><!--end summary-->
 

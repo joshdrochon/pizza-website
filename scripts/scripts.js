@@ -13,6 +13,8 @@ $(document).ready(function(){
     $('input[name="toppings"]:checked').each(function(){
        //console.log(this.value);
        userToppings.push(this.value); //loops through each checked checkbox, grabs the value, and pushes into array
+       $(".toppings-selected").append("<li>" + this.value + "</li>");
+
     });
 
     function Pizza(size, toppings){
@@ -29,7 +31,7 @@ $(document).ready(function(){
       var md = 18;
       var lg = 22;
 
-      for(let i = 0; i<=userToppings.length; i++){
+      for(i = 0; i<=userToppings.length; i++){
         if(userPizza.size == "small"){
           sm += 1.50;
           return sm;
@@ -42,13 +44,12 @@ $(document).ready(function(){
         }
       }
 
-      //return sm;
-    };
+    }; //end calcPrice
 
 
-    //console.log(userPizza);
+    $(".total").text(userPizza.calcPrice());
 
-    console.log(userPizza.calcPrice());
+
 
     $("#summary").show();
 

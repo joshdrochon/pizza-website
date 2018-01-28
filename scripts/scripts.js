@@ -1,9 +1,5 @@
-//business logic
-
-
-//ui logic
-
 $(function(){
+
   $("#size-toppings").submit(function(event){
     event.preventDefault();
 
@@ -47,8 +43,18 @@ $(function(){
 
     }; //end calcPrice
 
+    let numString = userPizza.calcPrice().toString();
 
-    $(".total").text(userPizza.calcPrice());
+    if(numString.length === 4){
+      numString += "0";
+    }else if(numString.length === 2){
+      numString += ".00";
+    }
+
+    console.log(numString);
+    //console.log(typeof(numString));
+
+    $(".total").text(numString);
 
     $("#summary").show();
 

@@ -3,7 +3,7 @@
 
 //ui logic
 
-$(document).ready(function(){
+$(function(){
   $("#size-toppings").submit(function(event){
     event.preventDefault();
 
@@ -22,28 +22,27 @@ $(document).ready(function(){
         this.toppings = toppings;
       }
 
-
     var userPizza = new Pizza(userSize, userToppings);
 
-    console.log(userToppings);
+    //console.log(userPizza);
 
     Pizza.prototype.calcPrice = function(){
 
-      var sm = 14;
-      var md = 18;
-      var lg = 22;
+      let s = userPizza.size;
+      let l = userToppings.length;
 
-      for(i = 0; i<=userToppings.length; i++){
-        if(userPizza.size == "small"){
-          sm += 1.50;
-          return sm;
-        }else if(userPizza.size == "medium"){
-          md += 1.50;
-          return md;
-        }else{
-          lg += 1.50;
-          return lg;
-        }
+      //console.log(s);
+      //console.log(l);
+
+      if(s === "small"){
+        var p = 14 + l * 1.5;
+        return p;
+      }else if(s === "medium"){
+        var p = 18 + l * 1.5;
+        return p;
+      }else{
+        var p = 22 + l * 1.5;
+        return p;
       }
 
     }; //end calcPrice

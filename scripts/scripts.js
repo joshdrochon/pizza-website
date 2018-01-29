@@ -1,3 +1,9 @@
+WebFont.load({
+  google: {
+    families: ["Cookie:regular"]
+  }
+});
+
 $(function(){
 
   $("#size-toppings").submit(function(event){
@@ -20,7 +26,7 @@ $(function(){
 
     var userPizza = new Pizza(userSize, userToppings);
 
-    //console.log(userPizza);
+    console.log(userPizza);
 
     Pizza.prototype.calcPrice = function(){
 
@@ -45,14 +51,14 @@ $(function(){
 
     let numString = userPizza.calcPrice().toString();
 
+    console.log(numString);
+    console.log(typeof(numString));
+
     if(numString.length === 4){
       numString += "0";
     }else if(numString.length === 2){
       numString += ".00";
     }
-
-    console.log(numString);
-    //console.log(typeof(numString));
 
     $(".total").text(numString);
 

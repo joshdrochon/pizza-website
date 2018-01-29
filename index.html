@@ -4,38 +4,42 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
     <script src="scripts/jquery-3.2.1.js"></script>
     <script src="scripts/scripts.js"></script>
     <title>Pirate Bay Pizza</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Pirate Bay Pizza</h1>
-
-      <p>We have three sizes:</p>
-      <ul>
-        <li>Small: 14</li>
-        <li>Medium: 18</li>
-        <li>Large: 22</li>
+    <div id="content" class="container">
+      <div class="banner">
+        <h1 id="title">Pirate Bay Pizza Co.</h1>
+      </div>
+      <p style="display: inline">We have three sizes... </p>
+      <ul id="sizes">
+        <li>$14 pequeña ... 10"</li>
+        <li>$18 mediana ... 12"</li>
+        <li>$22 grande ... 15"</li>
       </ul>
 
       <form id="size-toppings">
 
         <div class="size">
 
-          <h3>Select your Size</h3>
+          <h3 style="display:inline">Select your Size</h3>
 
-          <select id="size">
-            <option value="small">Small (10")</option>
-            <option value="medium">Medium (12")</option>
-            <option value="large">Large (15")</option>
-          </select>
+          
+            <select style="float:right" id="size">
+              <option value="small">Pequeña (10")</option>
+              <option value="medium">Mediana (12")</option>
+              <option value="large">Grande (15")</option>
+            </select>
+          <div>
 
         </div><!--end size-->
 
         <div class="toppings">
 
-          <p>Note, all pizzas come standard with pizza sauce and cheese.</p>
+          <p>All pizzas come standard with sauce and cheese.</p>
           <h3>Select your Toppings</h3>
           <p>(each additional at $1.50)</p>
 
@@ -54,18 +58,19 @@
           </fieldset>
 
         </div><!--end toppings-->
-        <br>
-        <button class="btn btn-success" type="submit" name="button">Place Order</button>
+
+        <br><button id="submit" class="btn btn-success" type="submit" name="button">Place Order</button>
 
       </form><!--end form-->
 
-      <div id="summary">
-        <hr>
-        <p>Hey Pirate, you ordered a pizza with these savage toppings:<ul class="toppings-selected"></ul>
-          <h2>That'll cost you a total of $<span class="total"></span></h2>
-        </p>
-      </div><!--end summary-->
-
     </div><!--end container-->
+
+    <div id="summary" class="container">
+      <p>Hey Pirate, you ordered a pizza with these savage toppings:<ul class="toppings-selected"></ul>
+        <h2>That'll cost you a total of $<span class="total"></span></h2>
+      </p>
+    </div><!--end summary-->
+
+
   </body>
 </html>

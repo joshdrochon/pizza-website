@@ -4,6 +4,23 @@ function Pizza(size, toppings){
     this.toppings = toppings;
   }
 
+  Pizza.prototype.calcPrice = function(){
+
+    let s = this.size;
+    let l = this.toppings.length;  //use this.size - userPizza.size at ln10 is not defined
+
+    if(s === "small"){
+      var p = 14 + l * 1.5;
+      return p;
+    }else if(s === "medium"){
+      var p = 18 + l * 1.5;
+      return p;
+    }else{
+      var p = 22 + l * 1.5;
+      return p;
+    }
+  };
+
 //ui logic
 WebFont.load({
   google: {
@@ -31,23 +48,9 @@ $(function(){
 
     console.log(userPizza);
 
-    Pizza.prototype.calcPrice = function(){
+    userPizza.calcPrice();
 
-      let s = userPizza.size;
-      let l = userToppings.length;
 
-      if(s === "small"){
-        var p = 14 + l * 1.5;
-        return p;
-      }else if(s === "medium"){
-        var p = 18 + l * 1.5;
-        return p;
-      }else{
-        var p = 22 + l * 1.5;
-        return p;
-      }
-
-    };
 
     let numString = userPizza.calcPrice().toFixed(2); //converts number to string
 

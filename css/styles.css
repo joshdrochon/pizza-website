@@ -2,6 +2,11 @@
   border: 1px dotted green;
 }
 
+.size-ordered h3{
+  display: inline;
+  text-decoration: underline;
+}
+
 body{
     background-color: #005959;
     color: white;

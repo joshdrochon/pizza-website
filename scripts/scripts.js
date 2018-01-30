@@ -47,14 +47,17 @@ $(function(){
         return p;
       }
 
-    }; //end calcPrice
+    };
 
-    let numString = userPizza.calcPrice().toFixed(2);  //toString();
+    let numString = userPizza.calcPrice().toFixed(2); //converts number to string
 
     console.log(numString);
     console.log(typeof(numString));
 
     $(".total").text(numString);
+
+    $(".size-ordered").text("");
+    $(".size-ordered").append("<h3>" + userPizza.size + "</h3>");
 
     $("#summary").slideDown();
 
@@ -62,3 +65,6 @@ $(function(){
 
   });
 });
+
+
+//upon sumbit, the sizze of the pizza ordered needs to be appended to the span tag

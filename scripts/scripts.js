@@ -49,20 +49,20 @@ $(function(){
 
     }; //end calcPrice
 
-    let numString = userPizza.calcPrice().toString();
+    let numString = userPizza.calcPrice().toFixed(2);  //toString();
 
     console.log(numString);
     console.log(typeof(numString));
 
-    if(numString.length === 4){
-      numString += "0";
-    }else if(numString.length === 2){
-      numString += ".00";
-    }
+    // if(numString.length === 4){
+    //   numString += "0";
+    // }else if(numString.length === 2){
+    //   numString += ".00";
+    // }
 
     $(".total").text(numString);
 
-    $("#summary").show();
+    $("#summary").slideDown();
 
     $("#size-toppings")[0].reset(); //reset form to default
 

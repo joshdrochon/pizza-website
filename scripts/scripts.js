@@ -1,3 +1,10 @@
+//business logic
+function Pizza(size, toppings){
+    this.size = size;
+    this.toppings = toppings;
+  }
+
+//ui logic
 WebFont.load({
   google: {
     families: ["Cookie:regular"]
@@ -12,17 +19,13 @@ $(function(){
     var userSize = $("#size").val();
     var userToppings = [];
 
+    $(".toppings-selected").text(""); //clears all appended list items
+
     $('input[name="toppings"]:checked').each(function(){
        //console.log(this.value);
-       userToppings.push(this.value); //loops through each checked checkbox, grabs the value, and pushes into array
+       userToppings.push(this.value); //loops through each checked checkbox, grabs the value, and pushes into []
        $(".toppings-selected").append("<li>" + this.value + "</li>");
-
-    });
-
-    function Pizza(size, toppings){
-        this.size = size;
-        this.toppings = toppings;
-      }
+     });
 
     var userPizza = new Pizza(userSize, userToppings);
 
@@ -32,9 +35,6 @@ $(function(){
 
       let s = userPizza.size;
       let l = userToppings.length;
-
-      //console.log(s);
-      //console.log(l);
 
       if(s === "small"){
         var p = 14 + l * 1.5;
@@ -53,12 +53,6 @@ $(function(){
 
     console.log(numString);
     console.log(typeof(numString));
-
-    // if(numString.length === 4){
-    //   numString += "0";
-    // }else if(numString.length === 2){
-    //   numString += ".00";
-    // }
 
     $(".total").text(numString);
 
